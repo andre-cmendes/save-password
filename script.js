@@ -1,14 +1,14 @@
 document
   .getElementById('passwordForm')
   .addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
     const passwordInput = document.getElementById('passwordInput');
     const password = passwordInput.value;
 
     if (password) {
       savePassword(password);
-      passwordInput.value = ''; // Clear the input field
+      passwordInput.value = '';
     }
   });
 
@@ -21,8 +21,7 @@ function savePassword(password) {
 
 function displayPasswords() {
   const passwordList = document.getElementById('passwordList');
-  passwordList.innerHTML = ''; // Clear the list
-
+  passwordList.innerHTML = '';
   passwords.forEach((password, index) => {
     const li = document.createElement('li');
     li.textContent = `Password ${index + 1}: ${password}`;
